@@ -57,4 +57,4 @@ jobs:
           inlineScript: |
             az config set extension.use_dynamic_install=yes_without_prompt
             az containerapp registry set -n cap-dev-weather-01 -g azsu-rg-dev-weather-01 --server mytestcontainerreg001.azurecr.io --username  ${{ secrets.CAPDEVWEATHER01_REGISTRY_USERNAME }} --password ${{ secrets.CAPDEVWEATHER01_REGISTRY_PASSWORD }}
-            az containerapp update -n cap-dev-weather-01 -g azsu-rg-dev-weather-01 --image mytestcontainerreg001.azurecr.io/cap-dev-weather-01:${{ github.sha }}
+            az containerapp update -n cap-dev-weather-01 -g azsu-rg-dev-weather-01 --image mytestcontainerreg001.azurecr.io/cap-dev-weather-01:${{ github.sha }} --container-name weatherapp-01
